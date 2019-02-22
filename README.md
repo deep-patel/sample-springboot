@@ -7,7 +7,7 @@ Spring Boot App
 git clone https://github.com/deep-patel/sample-springboot.git
 cd sample-springboot
 mvn clean package
-java -jar springbootsample-core/target/springbootsample-core-main.jar
+java -jar springbootsample-core/target/springbootsample-app-main.jar
 ```
 
 After running the service try hitting url: http://127.0.0.1:8080/actuator/
