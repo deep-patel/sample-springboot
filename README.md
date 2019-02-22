@@ -25,6 +25,5 @@ There are pretty interesting insights which spring actuator gives like all the d
 
 Also have enabled prometheus so it will give http://127.0.0.1:8080/actuator/prometheus metrics here as well
 
-
-
-
+Metrics emitted by this above URL can be used for telegraf prometheus input: 
+https://github.com/influxdata/telegraf/tree/master/plugins/inputs/prometheus
