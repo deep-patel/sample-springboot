@@ -18,7 +18,7 @@ mvn clean package
 java -jar springbootsample-core/target/springbootsample-app-main.jar
 ```
 
-It start embedded server there are following options:
+It starts embedded server there are following options:
 - Tomcat (by default)
 - Jetty
 - Undertow
