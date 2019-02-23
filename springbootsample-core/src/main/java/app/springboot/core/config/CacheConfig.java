@@ -18,6 +18,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by: deep.patel on 22/02/19
+ *
+ * Will check any configuration in the application.properties or application-{env}.properties files
+ * with cache.configs.<anycachename>.* and constructs object of this class</></>
  */
 @Slf4j
 @ConfigurationProperties(prefix = "cache")

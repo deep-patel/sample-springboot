@@ -3,6 +3,7 @@ package app.springboot.core.controller;
 import app.springboot.core.dto.ResponseObject;
 import app.springboot.core.service.ITestService;
 
+import io.prometheus.client.spring.web.PrometheusTimeMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class TestEndpoint {
         this.testService = testService;
     }
 
+    @PrometheusTimeMethod(name = "test_endpoint_latency", help = "Some helpful info here")
     @GetMapping("/test")
     public ResponseEntity<ResponseObject> test(@RequestParam("id") int id){
         ResponseObject responseObject = testService.process(id);

@@ -5,6 +5,7 @@ Spring Boot App
 - Rest Endpoint (Controller)
 - Scheduled Task
 - Cache
+- Auto configuration properties
 - Prometheus
 - Service sterotype
 
