@@ -18,6 +18,13 @@ mvn clean package
 java -jar springbootsample-core/target/springbootsample-app-main.jar
 ```
 
+It start embedded server there are following options:
+- Tomcat (by default)
+- Jetty
+- Undertow
+
+We can also override default configuration of this servers by setting properties in application.properties
+
 Test: http://localhost:8080/test?id=1
 
 After running the service try hitting url: http://127.0.0.1:8080/actuator/
