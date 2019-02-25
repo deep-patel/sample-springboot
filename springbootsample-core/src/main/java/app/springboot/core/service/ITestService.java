@@ -7,4 +7,5 @@ import app.springboot.core.dto.ResponseObject;
  */
 public interface ITestService {
     ResponseObject process(int id);
+    boolean notify(String message);
 }

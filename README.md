@@ -8,6 +8,7 @@ Spring Boot App
 - Auto configuration properties
 - Prometheus
 - Service sterotype
+- JMS
 
 ## Build and Run
 
