@@ -1,5 +1,6 @@
 package app.springboot.core;
 
+import com.ryantenney.metrics.spring.config.annotation.EnableMetrics;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
@@ -16,6 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableConfigurationProperties
 @EnableScheduling
 @EnableCaching
+@EnableMetrics
 @SpringBootApplication(exclude = { ErrorMvcAutoConfiguration.class})
 public class App {
     public static void main(String[] args) {

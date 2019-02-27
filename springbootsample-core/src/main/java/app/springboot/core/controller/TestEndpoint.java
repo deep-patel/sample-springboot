@@ -2,8 +2,9 @@ package app.springboot.core.controller;
 
 import app.springboot.core.dto.ResponseObject;
 import app.springboot.core.service.ITestService;
-
-import io.prometheus.client.spring.web.PrometheusTimeMethod;
+import com.codahale.metrics.MetricRegistry;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,18 +22,18 @@ public class TestEndpoint {
     private final ITestService testService;
 
     @Autowired
-    public TestEndpoint(final ITestService testService){
+    public TestEndpoint(final ITestService testService, final MetricRegistry metricRegistry){
         this.testService = testService;
     }
 
-    @PrometheusTimeMethod(name = "test_endpoint_latency", help = "Some helpful info here")
+    @Metered(name = "total_request")
+    @Timed(name = "latency")
     @GetMapping("/test")
     public ResponseEntity<ResponseObject> test(@RequestParam("id") int id){
         ResponseObject responseObject = testService.process(id);
         return ResponseEntity.status(responseObject.getStatus()).body(responseObject);
     }
 
-    @PrometheusTimeMethod(name = "notification_endpoint", help = "Some helpful info here")
     @GetMapping("/notify")
     public ResponseEntity<ResponseObject> test(@RequestParam("message") String message){
         boolean success = testService.notify(message);
